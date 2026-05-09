@@ -23,8 +23,7 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              "src/routes.json"
+              }
             ],
             "styles": ["src/material-theme.scss", "src/styles.css"]
           },
