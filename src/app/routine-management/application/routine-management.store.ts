@@ -1,10 +1,10 @@
 import { computed, DestroyRef, inject, Injectable, Signal, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { retry } from 'rxjs';
-import { Routine, RoutineStatus } from '../../../../../Downloads/routine-management/domain/model/routine.entity';
-import { RoutineItem, RoutineStep } from '../../../../../Downloads/routine-management/domain/model/routine-item.entity';
-import { DailyTracking, TrackingStatus } from '../../../../../Downloads/routine-management/domain/model/daily-tracking.entity';
-import { RoutineManagementApi } from '../../../../../Downloads/routine-management/infrastructure/routine-management-api';
+import { Routine, RoutineStatus } from '../domain/model/routine.entity';
+import { RoutineItem, RoutineStep } from '../domain/model/routine-item.entity';
+import { DailyTracking, TrackingStatus } from '../domain/model/daily-tracking.entity';
+import { RoutineManagementApi } from '../infrastructure/routine-management-api';
 
 /**
  * Holds routine management application state and coordinates

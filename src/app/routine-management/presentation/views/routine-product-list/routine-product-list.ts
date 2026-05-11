@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { TranslatePipe } from '@ngx-translate/core';
 import { RoutineManagementStore } from '../../../application/routine-management.store';
-import { RoutineItem } from '../../../../../../../Downloads/routine-management/domain/model/routine-item.entity';
+import { RoutineItem } from '../../../domain/model/routine-item.entity';
 
 /** Represents a day entry in the weekly day strip. */
 interface WeekDay {

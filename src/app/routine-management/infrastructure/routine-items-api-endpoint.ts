@@ -1,6 +1,6 @@
 import {BaseApiEndpoint} from '../../shared/infrastructure/base-api-endpoint';
-import {RoutineItem} from '../../../../../Downloads/routine-management/domain/model/routine-item.entity';
-import {RoutineItemResource, RoutineItemsResponse} from '../../../../../Downloads/routine-management/infrastructure/routine-item.response';
+import { RoutineItem } from '../domain/model/routine-item.entity';
+import { RoutineItemResource, RoutineItemsResponse } from './routine-item.response';
 import {RoutineItemAssembler} from './routine-item.assembler';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';

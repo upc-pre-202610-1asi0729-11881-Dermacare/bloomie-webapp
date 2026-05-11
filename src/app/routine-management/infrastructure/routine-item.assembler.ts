@@ -1,6 +1,6 @@
 import {BaseAssembler} from '../../shared/infrastructure/base-assembler';
-import { RoutineItem, RoutineStep } from '../../../../../Downloads/routine-management/domain/model/routine-item.entity';
-import {RoutineItemResource, RoutineItemsResponse} from '../../../../../Downloads/routine-management/infrastructure/routine-item.response';
+import { RoutineItem, RoutineStep } from '../domain/model/routine-item.entity';
+import { RoutineItemResource, RoutineItemsResponse } from './routine-item.response';
 
 /**
  * Maps RoutineItem entities to and from API resources.

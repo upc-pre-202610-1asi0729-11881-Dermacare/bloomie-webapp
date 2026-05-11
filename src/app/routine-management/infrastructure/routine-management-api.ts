@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
 import {BaseApi} from '../../shared/infrastructure/base-api';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
-import {Routine} from '../../../../../Downloads/routine-management/domain/model/routine.entity';
-import {RoutineItem} from '../../../../../Downloads/routine-management/domain/model/routine-item.entity';
-import {DailyTracking} from '../../../../../Downloads/routine-management/domain/model/daily-tracking.entity';
-import {RoutinesApiEndpoint} from '../../../../../Downloads/routine-management/infrastructure/routines-api-endpoint';
-import {RoutineItemsApiEndpoint} from '../../../../../Downloads/routine-management/infrastructure/routine-items-api-endpoint';
-import {DailyTrackingsApiEndpoint} from '../../../../../Downloads/routine-management/infrastructure/daily-trackings-api-endpoint';
+import { Observable } from 'rxjs';
+import { Routine } from '../domain/model/routine.entity';
+import { RoutineItem } from '../domain/model/routine-item.entity';
+import { DailyTracking } from '../domain/model/daily-tracking.entity';
+import { RoutinesApiEndpoint } from './routines-api-endpoint';
+import { RoutineItemsApiEndpoint } from './routine-items-api-endpoint';
+import { DailyTrackingsApiEndpoint } from './daily-trackings-api-endpoint';
 
 /**
  * Infrastructure facade for routine management endpoint operations.

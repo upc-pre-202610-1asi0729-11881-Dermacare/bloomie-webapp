@@ -1,6 +1,6 @@
 import {BaseApiEndpoint} from '../../shared/infrastructure/base-api-endpoint';
-import {Routine} from '../../../../../Downloads/routine-management/domain/model/routine.entity';
-import {RoutineResource, RoutinesResponse} from '../../../../../Downloads/routine-management/infrastructure/routine.response';
+import {Routine} from '../domain/model/routine.entity';
+import { RoutineResource, RoutinesResponse } from './routine.response';
 import {RoutineAssembler} from './routine.assembler';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';

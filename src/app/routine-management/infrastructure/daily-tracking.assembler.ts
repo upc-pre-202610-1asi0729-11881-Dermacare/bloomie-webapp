@@ -1,6 +1,6 @@
 import {BaseAssembler} from '../../shared/infrastructure/base-assembler';
-import { DailyTracking, TrackingStatus } from '../../../../../Downloads/routine-management/domain/model/daily-tracking.entity';
-import {DailyTrackingResource, DailyTrackingsResponse} from '../../../../../Downloads/routine-management/infrastructure/daily-tracking.response';
+import { DailyTracking, TrackingStatus } from '../domain/model/daily-tracking.entity';
+import { DailyTrackingResource, DailyTrackingsResponse } from './daily-tracking.response';
 
 /**
  * Maps DailyTracking entities to and from API resources.

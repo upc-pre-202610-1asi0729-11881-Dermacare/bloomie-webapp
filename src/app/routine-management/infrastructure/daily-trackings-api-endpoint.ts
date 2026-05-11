@@ -1,6 +1,6 @@
 import {BaseApiEndpoint} from '../../shared/infrastructure/base-api-endpoint';
-import {DailyTracking} from '../../../../../Downloads/routine-management/domain/model/daily-tracking.entity';
-import {DailyTrackingResource, DailyTrackingsResponse} from '../../../../../Downloads/routine-management/infrastructure/daily-tracking.response';
+import { DailyTracking } from '../domain/model/daily-tracking.entity';
+import { DailyTrackingResource, DailyTrackingsResponse } from './daily-tracking.response';
 import {DailyTrackingAssembler} from './daily-tracking.assembler';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';

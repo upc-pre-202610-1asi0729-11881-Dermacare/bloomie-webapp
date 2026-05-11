@@ -1,4 +1,4 @@
-import {BaseResource, BaseResponse} from '../../shared/infrastructure/base-response';
+import { BaseResource, BaseResponse } from '../../shared/infrastructure/base-response';
 
 /**
  * Resource representation of a routine returned by the API.
