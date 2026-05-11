@@ -218,5 +218,34 @@
         "sunday": "Domingo"
       }
     }
+  },
+  "productDiscovery": {
+    "trendingItems": {
+      "title": "Tendencias",
+      "productsLabel": "productos",
+      "searchPlaceholder": "Busca un producto o marca...",
+      "tabAll": "Todos los productos",
+      "tabFavorites": "Favoritos",
+      "aiRecommended": "Recomendado por IA",
+      "aiOnly": "Solo IA",
+      "noProducts": "Ningún producto coincide con tu búsqueda.",
+      "filterTitle": "Filtrar productos",
+      "filterByCategory": "Filtrar por categoría",
+      "filterByAi": "Filtrar por recomendación IA",
+      "aiOnlyOption": "Solo recomendados por IA",
+      "showAllOption": "Mostrar todos los productos",
+      "applyFilters": "Aplicar filtros",
+      "clearAll": "Limpiar todo"
+    },
+    "productDetail": {
+      "title": "Detalle del producto",
+      "aiRecommended": "Recomendado por IA",
+      "aiCompatibilityTitle": "Compatibilidad de piel IA",
+      "keyBenefits": "Beneficios clave",
+      "addToRoutineBtn": "Añadir a mi rutina",
+      "saveBtn": "Guardar",
+      "savedBtn": "Guardado ♡",
+      "noProduct": "Ningún producto seleccionado."
+    }
   }
 }

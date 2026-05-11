@@ -218,5 +218,34 @@
         "sunday": "Sunday"
       }
     }
+  },
+  "productDiscovery": {
+    "trendingItems": {
+      "title": "Trending items",
+      "productsLabel": "products",
+      "searchPlaceholder": "Search a product or brand...",
+      "tabAll": "All Products",
+      "tabFavorites": "Favourites",
+      "aiRecommended": "AI Recommended",
+      "aiOnly": "AI only",
+      "noProducts": "No products match your search.",
+      "filterTitle": "Filter Products",
+      "filterByCategory": "Filter by Category",
+      "filterByAi": "Filter by AI Recommendation",
+      "aiOnlyOption": "AI Recommended only",
+      "showAllOption": "Show all products",
+      "applyFilters": "Apply filters",
+      "clearAll": "Clear all"
+    },
+    "productDetail": {
+      "title": "Product Detail",
+      "aiRecommended": "AI Recommended",
+      "aiCompatibilityTitle": "AI Skin Compatibility",
+      "keyBenefits": "Key Benefits",
+      "addToRoutineBtn": "Add to My Routine",
+      "saveBtn": "Save",
+      "savedBtn": "Saved ♡",
+      "noProduct": "No product selected."
+    }
   }
 }
