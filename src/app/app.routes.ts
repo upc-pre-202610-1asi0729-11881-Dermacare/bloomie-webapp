@@ -32,6 +32,13 @@ export const routes: Routes = [
         (m) => m.intelligentSupportRoutes,
       ),
   },
+  {
+    path: 'trending',
+    loadChildren: () =>
+      import('./product-discovery/presentation/product-discovery.routes').then(
+        (m) => m.productDiscoveryRoutes,
+      ),
+    },
 
   { path: '**', redirectTo: 'dermatology' },
 ];
