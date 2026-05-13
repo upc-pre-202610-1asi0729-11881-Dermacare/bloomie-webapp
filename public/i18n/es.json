@@ -8,6 +8,113 @@
     "trending": "Tendencias",
     "profile": "Perfil"
   },
+  "dashboard": {
+    "greeting": {
+      "morning": "Buenos días",
+      "afternoon": "Buenas tardes",
+      "evening": "Buenas noches"
+    },
+    "statusLine": "Tu piel está mejorando",
+    "stats": {
+      "skinHealthScore": "Puntaje de Salud",
+      "routineStreak": "Racha de Rutina",
+      "nextAppointment": "Próxima Cita",
+      "productsInRoutine": "Productos en Rutina",
+      "days": "días",
+      "steps": "pasos",
+      "thisWeek": "+{{value}} esta semana",
+      "keepItUp": "¡Sigue así!",
+      "lastUpdatedToday": "Actualizado hoy",
+      "noAppointment": "Sin próximas"
+    },
+    "skinStatus": {
+      "title": "Estado de Piel",
+      "improving": "Mejorando",
+      "stable": "Estable",
+      "declining": "Declinando",
+      "hydration": "Hidratación",
+      "texture": "Textura",
+      "sensitivity": "Sensibilidad",
+      "brightness": "Luminosidad",
+      "skinTypes": {
+        "NORMAL": "Normal",
+        "DRY": "Seca",
+        "OILY": "Grasa",
+        "COMBINATION": "Mixta",
+        "SENSITIVE": "Sensible",
+        "NORMAL_DRY": "Normal a Seca"
+      },
+      "sensitivity_levels": {
+        "LOW": "con baja sensibilidad",
+        "MEDIUM": "con sensibilidad moderada",
+        "HIGH": "con alta sensibilidad"
+      }
+    },
+    "skinProgress": {
+      "title": "Progreso de Piel",
+      "last30Days": "Últimos 30 días",
+      "overallScore": "Puntaje general de salud a lo largo del tiempo",
+      "weeks": {
+        "w1": "S1",
+        "w2": "S2",
+        "w3": "S3",
+        "w4": "S4"
+      }
+    },
+    "todaysRoutine": {
+      "title": "Rutina de Hoy",
+      "stepsDone": "{{done}}/{{total}} pasos completados",
+      "fullRoutine": "Rutina completa",
+      "noRoutine": "Sin rutina activa",
+      "noRoutineMessage": "Inicia un análisis de piel para obtener tu rutina personalizada."
+    },
+    "upcomingActions": {
+      "title": "Próximas Acciones",
+      "weeklySkiScan": "Análisis Semanal de Piel",
+      "dueInDays": "Vence en {{days}} días",
+      "dueToday": "Vence hoy",
+      "overdue": "Vencido",
+      "updateRoutine": "Actualizar Rutina",
+      "newAiSuggestion": "Nueva sugerencia de IA",
+      "noActions": "Sin próximas acciones"
+    },
+    "recommendations": {
+      "title": "Recomendaciones Personalizadas",
+      "seeAll": "Ver todo",
+      "aiRecommended": "Recomendado por IA",
+      "noRecommendations": "Aún sin recomendaciones"
+    },
+    "thisWeek": {
+      "title": "Esta Semana",
+      "routineCompleted": "Rutina completada",
+      "skinScans": "Análisis de piel",
+      "productsApplied": "Productos aplicados",
+      "times": "veces"
+    },
+    "skinScanDue": {
+      "title": "Análisis Pendiente",
+      "message": "Tu análisis semanal está listo. Evalúa el progreso de tu piel.",
+      "startScan": "Iniciar análisis"
+    },
+    "aiAssistant": {
+      "title": "Asistente IA",
+      "askAnything": "Pregúntale a la IA →",
+      "tipHydration": "Tu piel necesita más hidratación. Intenta agregar un sérum de ácido hialurónico a tu rutina.",
+      "tipBrightness": "Tu puntaje de luminosidad es bajo. Un sérum de vitamina C puede ayudarte a unificar el tono.",
+      "tipTexture": "La textura de tu piel necesita atención. Un exfoliante suave 2 veces por semana puede ayudar.",
+      "tipSensitivity": "Tu piel muestra alta sensibilidad. Usa productos suaves y sin fragancia esta semana."
+    },
+    "loading": "Cargando dashboard...",
+    "error": "No se pudieron cargar los datos del dashboard."
+  },
+  "routineStep": {
+    "CLEANSE": "Limpieza",
+    "ESSENCE": "Esencia",
+    "TONER": "Tónico",
+    "MOISTURIZER": "Hidratante",
+    "SUNSCREEN": "Protector solar",
+    "SERUM": "Sérum"
+  },
   "derm": {
     "nav": {
       "agenda": "Agenda",
