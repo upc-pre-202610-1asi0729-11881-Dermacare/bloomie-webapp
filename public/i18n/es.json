@@ -417,7 +417,19 @@
       "improvementLabel": "Mejora de Puntaje",
       "improvementSubtitle": "Desde el primer escaneo",
       "routineBtn": "Ir a mi rutina",
-      "backBtn": "Volver"
+      "backBtn": "Volver",
+      "iam": {
+        "signInHome": {
+          "title": "Bloomie",
+          "tagline": "Tu viaje de cuidado de la piel comienza aquí",
+          "loginButton": "Iniciar sesión",
+          "signUpButton": "Registrarse",
+          "dermatologistQuestion": "¿Eres dermatólogo?",
+          "dermatologistRegisterLink": "Regístrate aquí como especialista.",
+          "dermatologistLoginLink": "Inicia sesión como especialista."
+        }
+      }
+
     }
   }
 }

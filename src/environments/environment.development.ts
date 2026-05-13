@@ -20,4 +20,5 @@ export const environment = {
   subscriptionsEndpointPath: '/subscriptions',
   supportQueriesEndpointPath: '/support_queries',
   chatMessagesEndpointPath: '/chat_messages',
+  useMockAuthentication: true,
 };

@@ -3,8 +3,13 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dermatology',
+    redirectTo: 'iam',
     pathMatch: 'full',
+  },
+  {
+    path: 'iam',
+    loadChildren: () =>
+      import('./iam/presentation/iam.routes').then((m) => m.iamRoutes),
   },
   {
     path: 'dermatology',
@@ -45,5 +50,5 @@ export const routes: Routes = [
       import('./skin-analysis/presentation/skin-analysis.routes').then((m) => m.skinAnalysisRoutes),
   },
 
-  { path: '**', redirectTo: 'dermatology' },
+  { path: '**', redirectTo: 'iam' },
 ];

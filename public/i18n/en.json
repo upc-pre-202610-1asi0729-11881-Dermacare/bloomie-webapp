@@ -415,7 +415,18 @@
       "improvementLabel": "Score Improvement",
       "improvementSubtitle": "Since first scan",
       "routineBtn": "Go to my routine",
-      "backBtn": "Go back"
+      "backBtn": "Go back",
+      "iam": {
+        "signInHome": {
+          "title": "Bloomie",
+          "tagline": "Your skincare journey starts here",
+          "loginButton": "Login",
+          "signUpButton": "Sign up",
+          "dermatologistQuestion": "Are you a dermatologist?",
+          "dermatologistRegisterLink": "Register here as a specialist.",
+          "dermatologistLoginLink": "Log in as a specialist."
+        }
+      }
     }
   }
 }
