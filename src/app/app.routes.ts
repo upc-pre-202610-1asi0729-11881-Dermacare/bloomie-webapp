@@ -3,47 +3,56 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dermatology',
+    redirectTo: 'dashboard',
     pathMatch: 'full',
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () =>
+      import('./dashboard/presentation/dashboard.routes').then((module) => module.dashboardRoutes),
   },
   {
     path: 'dermatology',
     loadChildren: () =>
       import('./dermatology-care/presentation/dermatology-care.routes').then(
-        (m) => m.dermatologyCareRoutes,
+        (module) => module.dermatologyCareRoutes,
       ),
   },
   {
     path: 'routine',
     loadChildren: () =>
       import('./routine-management/presentation/routine-management.routes').then(
-        (m) => m.routineManagementRoutes,
+        (module) => module.routineManagementRoutes,
       ),
   },
   {
     path: 'derm',
     loadChildren: () =>
-      import('./dermatology-care/presentation/dermatology-care.routes').then((m) => m.dermRoutes),
+      import('./dermatology-care/presentation/dermatology-care.routes').then(
+        (module) => module.dermRoutes,
+      ),
   },
   {
     path: 'consult',
     loadChildren: () =>
       import('./intelligent-support/presentation/intelligent-support.routes').then(
-        (m) => m.intelligentSupportRoutes,
+        (module) => module.intelligentSupportRoutes,
       ),
   },
   {
     path: 'trending',
     loadChildren: () =>
       import('./product-discovery/presentation/product-discovery.routes').then(
-        (m) => m.productDiscoveryRoutes,
+        (module) => module.productDiscoveryRoutes,
       ),
   },
   {
     path: 'skin-analysis',
     loadChildren: () =>
-      import('./skin-analysis/presentation/skin-analysis.routes').then((m) => m.skinAnalysisRoutes),
+      import('./skin-analysis/presentation/skin-analysis.routes').then(
+        (module) => module.skinAnalysisRoutes,
+      ),
   },
 
-  { path: '**', redirectTo: 'dermatology' },
+  { path: '**', redirectTo: 'dashboard' },
 ];

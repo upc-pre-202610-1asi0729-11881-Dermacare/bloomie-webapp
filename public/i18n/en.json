@@ -8,6 +8,113 @@
     "trending": "Trending",
     "profile": "Profile"
   },
+  "dashboard": {
+    "greeting": {
+      "morning": "Good morning",
+      "afternoon": "Good afternoon",
+      "evening": "Good evening"
+    },
+    "statusLine": "Your skin is doing well",
+    "stats": {
+      "skinHealthScore": "Skin Health Score",
+      "routineStreak": "Routine Streak",
+      "nextAppointment": "Next Appointment",
+      "productsInRoutine": "Products in Routine",
+      "days": "days",
+      "steps": "steps",
+      "thisWeek": "+{{value}} this week",
+      "keepItUp": "Keep it up!",
+      "lastUpdatedToday": "Last updated today",
+      "noAppointment": "No upcoming"
+    },
+    "skinStatus": {
+      "title": "Skin Status",
+      "improving": "Improving",
+      "stable": "Stable",
+      "declining": "Declining",
+      "hydration": "Hydration",
+      "texture": "Texture",
+      "sensitivity": "Sensitivity",
+      "brightness": "Brightness",
+      "skinTypes": {
+        "NORMAL": "Normal",
+        "DRY": "Dry",
+        "OILY": "Oily",
+        "COMBINATION": "Combination",
+        "SENSITIVE": "Sensitive",
+        "NORMAL_DRY": "Normal to Dry"
+      },
+      "sensitivity_levels": {
+        "LOW": "with low sensitivity",
+        "MEDIUM": "with mild sensitivity",
+        "HIGH": "with high sensitivity"
+      }
+    },
+    "skinProgress": {
+      "title": "Skin Progress",
+      "last30Days": "Last 30 days",
+      "overallScore": "Overall health score over time",
+      "weeks": {
+        "w1": "W1",
+        "w2": "W2",
+        "w3": "W3",
+        "w4": "W4"
+      }
+    },
+    "todaysRoutine": {
+      "title": "Today's Routine",
+      "stepsDone": "{{done}}/{{total}} steps done",
+      "fullRoutine": "Full routine",
+      "noRoutine": "No active routine",
+      "noRoutineMessage": "Start a skin scan to get your personalized routine."
+    },
+    "upcomingActions": {
+      "title": "Upcoming Actions",
+      "weeklySkiScan": "Weekly Skin Scan",
+      "dueInDays": "Due in {{days}} days",
+      "dueToday": "Due today",
+      "overdue": "Overdue",
+      "updateRoutine": "Update Routine",
+      "newAiSuggestion": "New AI suggestion",
+      "noActions": "No upcoming actions"
+    },
+    "recommendations": {
+      "title": "Personalized Recommendations",
+      "seeAll": "See all",
+      "aiRecommended": "AI Recommended",
+      "noRecommendations": "No recommendations yet"
+    },
+    "thisWeek": {
+      "title": "This Week",
+      "routineCompleted": "Routine completed",
+      "skinScans": "Skin scans",
+      "productsApplied": "Products applied",
+      "times": "times"
+    },
+    "skinScanDue": {
+      "title": "Skin Scan Due",
+      "message": "Your weekly scan is ready. Analyze your skin progress.",
+      "startScan": "Start scan"
+    },
+    "aiAssistant": {
+      "title": "AI Assistant",
+      "askAnything": "Ask AI anything →",
+      "tipHydration": "Your skin could use more hydration. Try adding a hyaluronic acid serum to your routine.",
+      "tipBrightness": "Your brightness score is low. Consider a vitamin C serum to even out your skin tone.",
+      "tipTexture": "Your skin texture needs attention. A gentle exfoliant 2x per week could help smooth things out.",
+      "tipSensitivity": "Your skin is showing high sensitivity. Stick to fragrance-free, gentle products this week."
+    },
+    "loading": "Loading dashboard...",
+    "error": "Could not load dashboard data.",
+    "routineStep": {
+      "CLEANSE": "Cleanse",
+      "ESSENCE": "Essence",
+      "TONER": "Toner",
+      "MOISTURIZER": "Moisturizer",
+      "SUNSCREEN": "Sunscreen",
+      "SERUM": "Serum"
+    }
+  },
   "derm": {
     "nav": {
       "agenda": "Agenda",
@@ -419,8 +526,3 @@
     }
   }
 }
-
-
-
-
-
