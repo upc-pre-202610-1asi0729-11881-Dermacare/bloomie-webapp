@@ -9,10 +9,29 @@ import { UserAssembler } from '../infrastructure/user.assembler';
 import { UserResource } from '../infrastructure/user.response';
 import { DermatologistResource } from '../infrastructure/dermatologist.response';
 import { AuthResponse } from '../infrastructure/auth.response';
-import {
-  MOCK_AUTHENTICATION_TOKEN,
-  MOCK_CREDENTIALS,
-} from '../infrastructure/iam.mock-credentials';
+
+/**
+ * Mock credentials for local development
+ */
+const MOCK_CREDENTIALS = [
+  {
+    email: 'user@gmail.com',
+    password: '12345678',
+    id: 1,
+    name: 'Juan',
+    lastName: 'Pérez',
+    role: UserRole.YoungAdult,
+  },
+  {
+    email: 'derma@gmail.com',
+    password: '12345678',
+    id: 2,
+    name: 'Laura',
+    lastName: 'Morales',
+    role: UserRole.Dermatologist,
+  },
+];
+const MOCK_AUTHENTICATION_TOKEN = 'mock-auth-token';
 
 /**
  * Key used to persist the authentication token in the browser session storage.

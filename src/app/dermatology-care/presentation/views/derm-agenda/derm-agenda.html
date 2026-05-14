@@ -2,21 +2,6 @@
 
   <h1 class="derm-agenda__title">{{ 'dermatology.dermAgenda.title' | translate }}</h1>
 
-  <!-- Day strip -->
-  <div class="derm-agenda__day-strip">
-    @for (agendaDay of agendaDays(); track agendaDay.day; let i = $index) {
-      <button
-        class="derm-agenda__day-btn"
-        [class.derm-agenda__day-btn--today]="agendaDay.isToday"
-        [class.derm-agenda__day-btn--selected]="selectedDayIndex() === i"
-        (click)="selectDay(i)"
-      >
-        <span class="derm-agenda__day-number">{{ agendaDay.day }}</span>
-        <span class="derm-agenda__day-name">{{ agendaDay.name }}</span>
-      </button>
-    }
-  </div>
-
   <!-- Summary label -->
   <div class="derm-agenda__summary">
     <p class="derm-agenda__summary-title">{{ 'dermatology.dermAgenda.dayLabel' | translate }}</p>
