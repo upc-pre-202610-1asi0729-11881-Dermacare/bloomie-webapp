@@ -34,12 +34,14 @@ const MOCK_CREDENTIALS = [
 const MOCK_AUTHENTICATION_TOKEN = 'mock-auth-token';
 
 /**
- * Key used to persist the authentication token in the browser session storage.
+ * Key used to persist the authentication token in the browser session storage,
+ * ensuring that the user’s identity remains valid and secure throughout the entire duration of the active session.
  */
 const AUTHENTICATION_TOKEN_STORAGE_KEY = 'bloomie.authentication.token';
 
 /**
- * Key used to persist the authenticated user payload in the browser session storage.
+ * This constant serves as the unique cryptographic-style identifier for the authenticated user payload, strategically preserved within the browser's session storage to maintain a seamless,
+ * stateful experience and ensure data persistence across navigational transitions during the active lifecycle of the application.
  */
 const AUTHENTICATED_USER_STORAGE_KEY = 'bloomie.authentication.user';
 
