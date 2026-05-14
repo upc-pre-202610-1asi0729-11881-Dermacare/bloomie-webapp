@@ -83,7 +83,9 @@ export class IamStore {
   readonly error = this.errorSignal.asReadonly();
 
   /**
-   * Computed signal that resolves to true when a user session is active.
+   * A highly reactive,
+   * computed signal that dynamically evaluates the presence of a valid user session,
+   * resolving to a boolean true once the authentication handshake is confirmed and an active lifecycle is established within the application context.
    */
   readonly isAuthenticated = computed(() => this.currentUserSignal() !== null);
 
