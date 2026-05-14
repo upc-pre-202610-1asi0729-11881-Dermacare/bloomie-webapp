@@ -1,7 +1,7 @@
 <div class="sign-in">
   <div class="sign-in__panel">
     <button type="button" class="sign-in__back" (click)="onBack()" aria-label="Back">
-      ←
+      <mat-icon>arrow_back</mat-icon>
     </button>
     <h1 class="sign-in__title">{{ 'iam.signIn.title' | translate }}</h1>
     <p class="sign-in__tagline">{{ 'iam.signIn.tagline' | translate }}</p>
@@ -50,7 +50,11 @@
             (click)="togglePasswordVisibility()"
             [attr.aria-label]="'iam.signIn.togglePassword' | translate"
           >
-            {{ showPassword() ? '🙈' : '👁️' }}
+            @if (showPassword()) {
+              <mat-icon>visibility_off</mat-icon>
+            } @else {
+              <mat-icon>visibility</mat-icon>
+            }
           </button>
         </div>
         @if (submitted() && form.get('password')?.hasError('required')) {

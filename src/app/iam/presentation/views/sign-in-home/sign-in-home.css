@@ -98,7 +98,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 4rem;
+    padding: 6rem 8rem;
     margin: 0;
   }
 
@@ -118,7 +118,7 @@
     flex: 1;
     max-width: 28rem;
     margin: auto;
-    padding: 4rem;
+    padding: 4rem 6rem;
   }
 
   .sign-in-home__primary-button {
