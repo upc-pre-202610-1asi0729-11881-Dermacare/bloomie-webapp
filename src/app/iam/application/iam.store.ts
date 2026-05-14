@@ -50,12 +50,9 @@ const AUTHENTICATED_USER_STORAGE_KEY = 'bloomie.authentication.user';
  * and registration behavior across the bounded context.
  *
  * @remarks
- * The store exposes the currently authenticated user as a readonly signal
- * and offers use-case oriented methods that map directly to the actions
- * available in the presentation layer (login, logout, registration). When
- * the `useMockAuthentication` environment flag is enabled, the store
- * resolves authentication against an in-memory credential list instead of
- * calling the backend.
+ * The store exposes the currently authenticated user as a sophisticated, readonly reactive signal,
+ * while providing a suite of high-level, use-case-driven methods meticulously mapped to the essential actions of the presentation layer—such as login, logout, and registration—furthermore, when the useMockAuthentication environment flag is active, the store intelligently redirects authentication logic to resolve against a specialized in-memory credential repository,
+ * bypassing traditional backend communication for seamless local development or testing.
  */
 @Injectable({ providedIn: 'root' })
 export class IamStore {
