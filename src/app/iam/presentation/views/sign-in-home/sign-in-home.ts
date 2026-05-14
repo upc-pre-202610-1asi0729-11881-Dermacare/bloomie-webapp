@@ -6,10 +6,10 @@ import { TranslatePipe } from '@ngx-translate/core';
   selector: 'app-sign-in-home',
   standalone: true,
   imports: [TranslatePipe],
-  templateUrl: './sign-in-home.component.html',
-  styleUrl: './sign-in-home.component.css',
+  templateUrl: './sign-in-home.html',
+  styleUrl: './sign-in-home.css',
 })
-export class SignInHomeComponent {
+export class SignInHome {
   private readonly router = inject(Router);
 
   onLogin = (): void => {

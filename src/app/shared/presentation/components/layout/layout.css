@@ -32,3 +32,18 @@
     display: block;
   }
 }
+
+@media (max-width: 1023px) {
+  .shell__body {
+    padding-top: 0;
+  }
+
+  .shell__content {
+    padding-top: 3.5rem; /* Space for the floating hamburger button */
+  }
+
+  /* Hide the topbar language switcher on mobile (space is tight) */
+  .shell__topbar {
+    display: none;
+  }
+}
