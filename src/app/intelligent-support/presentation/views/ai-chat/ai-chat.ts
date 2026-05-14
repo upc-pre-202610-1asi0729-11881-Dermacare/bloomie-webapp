@@ -21,21 +21,32 @@ export class AiChat {
   protected router = inject(Router);
   private readonly translator = inject(TranslateService);
 
-  /** Current text typed by the user in the input field. */
   readonly inputText = signal<string>('');
 
-  /** Translation keys for the FAQ quick-select buttons. */
   readonly faqQuestions: string[] = [
     'intelligentSupport.chat.faq.preventInjury',
     'intelligentSupport.chat.faq.faceMask',
     'intelligentSupport.chat.faq.oilySkin',
   ];
 
-  /**
-   * Sends the current input text as a user message.
-   * Delegates to the store which persists the message and evaluates limitations.
-   * Resets the input field after sending.
-   */
+  constructor() {
+    this.initializeChat();
+  }
+  private initializeChat(): void {
+    if (!this.store.currentQuery()) {
+      const newQuery = {
+        id: Date.now(),
+        user_id: 1,
+        skin_profile_id: 1,
+        last_facial_scan_id: 1,
+        suggested_action: 'GENERAL_SUPPORT',
+        status: 'ACTIVE',
+        created_at: new Date().toISOString(),
+      };
+      this.store.startQuery(newQuery as any);
+    }
+  }
+
   onSendMessage(): void {
     const text = this.inputText().trim();
     const currentQuery = this.store.currentQuery();

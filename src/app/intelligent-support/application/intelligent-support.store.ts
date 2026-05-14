@@ -152,7 +152,7 @@ export class IntelligentSupportStore {
       .subscribe({
         next: (createdMessage) => {
           this.messagesSignal.update((messages) => [...messages, createdMessage]);
-          this.loadingSignal.set(false);
+          this.loadMessages(supportQueryId);
           this.evaluateLimitation(text);
         },
         error: (err) => {
@@ -161,7 +161,6 @@ export class IntelligentSupportStore {
         },
       });
   }
-
   /**
    * Marks the current support query as resolved and updates it via the API.
    */
@@ -207,9 +206,8 @@ export class IntelligentSupportStore {
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (chatMessages) => {
-          this.messagesSignal.set(
-            chatMessages.filter((message) => message.supportQueryId === supportQueryId),
-          );
+          const filtered = chatMessages.filter((message) => message.supportQueryId === supportQueryId);
+          this.messagesSignal.set(filtered);  // Ahora sí muestra los mensajes
           this.loadingSignal.set(false);
           this.errorSignal.set(null);
         },

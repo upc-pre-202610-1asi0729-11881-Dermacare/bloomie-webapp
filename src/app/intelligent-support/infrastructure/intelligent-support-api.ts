@@ -6,6 +6,8 @@ import { SupportQuery } from '../domain/model/support-query.entity';
 import { ChatMessage } from '../domain/model/chat-message.entity';
 import { SupportQueriesApiEndpoint } from './support-queries-api-endpoint';
 import { ChatMessagesApiEndpoint } from './chat-messages-api-endpoint';
+import { map } from 'rxjs';
+import { ChatMessageAssembler } from './chat-message.assembler';
 
 /**
  * Infrastructure facade for intelligent support endpoint operations.
@@ -60,15 +62,21 @@ export class IntelligentSupportApi extends BaseApi {
    * @returns Stream with the collection of ChatMessage entities.
    */
   getChatMessages(supportQueryId: number): Observable<ChatMessage[]> {
-    return this.chatMessagesEndpoint.getAll();
+    const assembler = new ChatMessageAssembler();
+    return this.chatMessagesEndpoint.getAll().pipe(
+      map((response: any) => {
+        if (Array.isArray(response)) {
+          return response.map((item) => assembler.toEntityFromResource(item));
+        }
+        return assembler.toEntitiesFromResponse(response);
+      }),
+    );
   }
 
-  /**
-   * Sends a new chat message within a support query session.
-   * @param chatMessage - The chat message entity to persist.
-   * @returns Stream with the created ChatMessage entity.
-   */
   sendChatMessage(chatMessage: ChatMessage): Observable<ChatMessage> {
-    return this.chatMessagesEndpoint.create(chatMessage);
+    const assembler = new ChatMessageAssembler();
+    return this.chatMessagesEndpoint
+      .create(chatMessage)
+      .pipe(map((resource: any) => assembler.toEntityFromResource(resource)));
   }
 }
