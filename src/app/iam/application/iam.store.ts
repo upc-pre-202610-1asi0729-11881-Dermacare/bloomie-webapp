@@ -34,12 +34,14 @@ const MOCK_CREDENTIALS = [
 const MOCK_AUTHENTICATION_TOKEN = 'mock-auth-token';
 
 /**
- * Key used to persist the authentication token in the browser session storage.
+ * Key used to persist the authentication token in the browser session storage,
+ * ensuring that the user’s identity remains valid and secure throughout the entire duration of the active session.
  */
 const AUTHENTICATION_TOKEN_STORAGE_KEY = 'bloomie.authentication.token';
 
 /**
- * Key used to persist the authenticated user payload in the browser session storage.
+ * This constant serves as the unique cryptographic-style identifier for the authenticated user payload, strategically preserved within the browser's session storage to maintain a seamless,
+ * stateful experience and ensure data persistence across navigational transitions during the active lifecycle of the application.
  */
 const AUTHENTICATED_USER_STORAGE_KEY = 'bloomie.authentication.user';
 
@@ -48,12 +50,9 @@ const AUTHENTICATED_USER_STORAGE_KEY = 'bloomie.authentication.user';
  * and registration behavior across the bounded context.
  *
  * @remarks
- * The store exposes the currently authenticated user as a readonly signal
- * and offers use-case oriented methods that map directly to the actions
- * available in the presentation layer (login, logout, registration). When
- * the `useMockAuthentication` environment flag is enabled, the store
- * resolves authentication against an in-memory credential list instead of
- * calling the backend.
+ * The store exposes the currently authenticated user as a sophisticated, readonly reactive signal,
+ * while providing a suite of high-level, use-case-driven methods meticulously mapped to the essential actions of the presentation layer—such as login, logout, and registration—furthermore, when the useMockAuthentication environment flag is active, the store intelligently redirects authentication logic to resolve against a specialized in-memory credential repository,
+ * bypassing traditional backend communication for seamless local development or testing.
  */
 @Injectable({ providedIn: 'root' })
 export class IamStore {
@@ -84,7 +83,9 @@ export class IamStore {
   readonly error = this.errorSignal.asReadonly();
 
   /**
-   * Computed signal that resolves to true when a user session is active.
+   * A highly reactive,
+   * computed signal that dynamically evaluates the presence of a valid user session,
+   * resolving to a boolean true once the authentication handshake is confirmed and an active lifecycle is established within the application context.
    */
   readonly isAuthenticated = computed(() => this.currentUserSignal() !== null);
 
@@ -253,7 +254,9 @@ export class IamStore {
   }
 
   /**
-   * Builds a synthetic authentication response for a successful mock registration.
+   * Dynamically constructs a comprehensive synthetic authentication payload designed to simulate a successful mock registration event,
+   * encapsulating all necessary user metadata and security tokens required to emulate a seamless transition from account creation to an established,
+   * authenticated state.
    *
    * @param email - Email registered by the user.
    * @param name - Given name registered by the user.
