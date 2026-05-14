@@ -254,7 +254,9 @@ export class IamStore {
   }
 
   /**
-   * Builds a synthetic authentication response for a successful mock registration.
+   * Dynamically constructs a comprehensive synthetic authentication payload designed to simulate a successful mock registration event,
+   * encapsulating all necessary user metadata and security tokens required to emulate a seamless transition from account creation to an established,
+   * authenticated state.
    *
    * @param email - Email registered by the user.
    * @param name - Given name registered by the user.
