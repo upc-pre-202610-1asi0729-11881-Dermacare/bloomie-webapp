@@ -3,20 +3,17 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'iam',
     pathMatch: 'full',
   },
   {
     path: 'dashboard',
     loadChildren: () =>
       import('./dashboard/presentation/dashboard.routes').then((module) => module.dashboardRoutes),
-    redirectTo: 'iam',
-    pathMatch: 'full',
   },
   {
     path: 'iam',
-    loadChildren: () =>
-      import('./iam/presentation/iam.routes').then((m) => m.iamRoutes),
+    loadChildren: () => import('./iam/presentation/iam.routes').then((m) => m.iamRoutes),
   },
   {
     path: 'dermatology',
@@ -60,7 +57,9 @@ export const routes: Routes = [
         (module) => module.skinAnalysisRoutes,
       ),
   },
-
+  {
+    path: 'profile',
+    loadChildren: () => import('./iam/presentation/iam.routes').then((m) => m.profileRoutes),
+  },
   { path: '**', redirectTo: 'dashboard' },
-  { path: '**', redirectTo: 'iam' },
 ];

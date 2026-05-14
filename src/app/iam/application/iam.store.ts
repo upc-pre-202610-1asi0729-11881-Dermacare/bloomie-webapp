@@ -38,14 +38,13 @@ const AUTHENTICATED_USER_STORAGE_KEY = 'bloomie.authentication.user';
  */
 @Injectable({ providedIn: 'root' })
 export class IamStore {
-
   private readonly userAssembler = new UserAssembler();
-  private readonly destroyRef    = inject(DestroyRef);
-  private readonly router        = inject(Router);
+  private readonly destroyRef = inject(DestroyRef);
+  private readonly router = inject(Router);
 
   private readonly currentUserSignal = signal<User | null>(null);
-  private readonly loadingSignal     = signal<boolean>(false);
-  private readonly errorSignal       = signal<string | null>(null);
+  private readonly loadingSignal = signal<boolean>(false);
+  private readonly errorSignal = signal<string | null>(null);
 
   /**
    * Readonly signal for the currently authenticated user, or null when
@@ -97,10 +96,13 @@ export class IamStore {
       return;
     }
 
-    this.iamApi.login(email, password).pipe(retry(1), takeUntilDestroyed(this.destroyRef)).subscribe({
-      next:  response => this.handleAuthenticationSuccess(response),
-      error: err      => this.handleAuthenticationError(err, 'Invalid email or password'),
-    });
+    this.iamApi
+      .login(email, password)
+      .pipe(retry(1), takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (response) => this.handleAuthenticationSuccess(response),
+        error: (err) => this.handleAuthenticationError(err, 'Invalid email or password'),
+      });
   }
 
   /**
@@ -111,7 +113,7 @@ export class IamStore {
     this.errorSignal.set(null);
     sessionStorage.removeItem(AUTHENTICATION_TOKEN_STORAGE_KEY);
     sessionStorage.removeItem(AUTHENTICATED_USER_STORAGE_KEY);
-    this.router.navigate(['/iam/landing']).then();
+    this.router.navigate(['/iam/sign-in-home']).then();
   }
 
   /**
@@ -132,18 +134,22 @@ export class IamStore {
     }
 
     const resource: UserResource = {
-      id:            0,
-      email:         email,
-      name:          name,
-      last_name:     lastName,
-      role:          UserRole.YoungAdult,
+      id: 0,
+      email: email,
+      name: name,
+      last_name: lastName,
+      role: UserRole.YoungAdult,
       password_hash: password,
     };
 
-    this.iamApi.registerYoungAdult(resource).pipe(retry(1), takeUntilDestroyed(this.destroyRef)).subscribe({
-      next:  response => this.handleAuthenticationSuccess(response),
-      error: err      => this.handleAuthenticationError(err, 'Failed to register young adult account'),
-    });
+    this.iamApi
+      .registerYoungAdult(resource)
+      .pipe(retry(1), takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (response) => this.handleAuthenticationSuccess(response),
+        error: (err) =>
+          this.handleAuthenticationError(err, 'Failed to register young adult account'),
+      });
   }
 
   /**
@@ -171,19 +177,23 @@ export class IamStore {
     }
 
     const resource: DermatologistResource = {
-      id:            0,
-      email:         email,
-      name:          name,
-      last_name:     lastName,
-      role:          UserRole.Dermatologist,
+      id: 0,
+      email: email,
+      name: name,
+      last_name: lastName,
+      role: UserRole.Dermatologist,
       password_hash: password,
-      specialty:     specialty,
+      specialty: specialty,
     };
 
-    this.iamApi.registerDermatologist(resource).pipe(retry(1), takeUntilDestroyed(this.destroyRef)).subscribe({
-      next:  response => this.handleAuthenticationSuccess(response),
-      error: err      => this.handleAuthenticationError(err, 'Failed to register dermatologist account'),
-    });
+    this.iamApi
+      .registerDermatologist(resource)
+      .pipe(retry(1), takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (response) => this.handleAuthenticationSuccess(response),
+        error: (err) =>
+          this.handleAuthenticationError(err, 'Failed to register dermatologist account'),
+      });
   }
 
   /**
@@ -194,8 +204,9 @@ export class IamStore {
    */
   private loginWithMockCredentials(email: string, password: string): void {
     const normalizedEmail = email.trim().toLowerCase();
-    const match = MOCK_CREDENTIALS.find(credential =>
-      credential.email.toLowerCase() === normalizedEmail && credential.password === password
+    const match = MOCK_CREDENTIALS.find(
+      (credential) =>
+        credential.email.toLowerCase() === normalizedEmail && credential.password === password,
     );
 
     if (!match) {
@@ -205,19 +216,21 @@ export class IamStore {
 
     const response: AuthResponse = {
       token: MOCK_AUTHENTICATION_TOKEN,
-      user:  {
-        id:            match.id,
-        email:         match.email,
-        name:          match.name,
-        last_name:     match.lastName,
-        role:          match.role,
+      user: {
+        id: match.id,
+        email: match.email,
+        name: match.name,
+        last_name: match.lastName,
+        role: match.role,
         password_hash: '',
       },
     };
 
-    of(response).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
-      next: authResponse => this.handleAuthenticationSuccess(authResponse),
-    });
+    of(response)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (authResponse) => this.handleAuthenticationSuccess(authResponse),
+      });
   }
 
   /**
@@ -228,22 +241,29 @@ export class IamStore {
    * @param lastName - Family name registered by the user.
    * @param role - Role assigned to the new account.
    */
-  private registerWithMockResponse(email: string, name: string, lastName: string, role: UserRole): void {
+  private registerWithMockResponse(
+    email: string,
+    name: string,
+    lastName: string,
+    role: UserRole,
+  ): void {
     const response: AuthResponse = {
       token: MOCK_AUTHENTICATION_TOKEN,
-      user:  {
-        id:            Date.now(),
-        email:         email,
-        name:          name,
-        last_name:     lastName,
-        role:          role,
+      user: {
+        id: Date.now(),
+        email: email,
+        name: name,
+        last_name: lastName,
+        role: role,
         password_hash: '',
       },
     };
 
-    of(response).pipe(takeUntilDestroyed(this.destroyRef)).subscribe({
-      next: authResponse => this.handleAuthenticationSuccess(authResponse),
-    });
+    of(response)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe({
+        next: (authResponse) => this.handleAuthenticationSuccess(authResponse),
+      });
   }
 
   /**
@@ -307,6 +327,6 @@ export class IamStore {
       this.router.navigate(['/derm']).then();
       return;
     }
-    this.router.navigate(['/dermatology']).then();
+    this.router.navigate(['/dashboard']).then();
   }
 }

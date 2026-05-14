@@ -1,5 +1,9 @@
+/* Re-use all patient sidebar base styles */
 @import '../sidebar/sidebar.css';
 
+/* ── Dermatologist-specific overrides ── */
+
+/** Subtitle row holds the stethoscope icon + "Specialist portal" text */
 .sidebar__subtitle-row {
   display: flex;
   align-items: center;
@@ -13,3 +17,10 @@
   height: 12px;
   color: rgba(255, 255, 255, 0.4);
 }
+
+/*
+ * The hamburger, overlay and mobile drawer styles are already defined
+ * in ../sidebar/sidebar.css via the @import above. No extra rules needed
+ * because the DermSidebar uses the same CSS class names (.sidebar,
+ * .sidebar__hamburger, etc.) as the patient sidebar.
+ */

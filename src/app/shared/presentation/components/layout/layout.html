@@ -4,7 +4,11 @@
   </main>
 } @else {
   <div class="shell">
-    <app-sidebar></app-sidebar>
+    @if (isDermatologistRoute()) {
+      <app-derm-sidebar></app-derm-sidebar>
+    } @else {
+      <app-sidebar></app-sidebar>
+    }
     <div class="shell__body">
       <header class="shell__topbar">
         <app-language-switcher></app-language-switcher>

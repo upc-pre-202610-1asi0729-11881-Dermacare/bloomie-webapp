@@ -34,9 +34,21 @@ export const dermatologyCareRoutes: Routes = [
  * Route tree for dermatologist portal views — under /derm.
  */
 export const dermRoutes: Routes = [
-  { path: 'agenda',                 loadComponent: dermAgenda             },
-  { path: 'past-consultations',     loadComponent: dermPastConsultations  },
-  { path: 'consultation-summary',   loadComponent: dermConsultationSummary},
-  { path: 'availability',           loadComponent: dermAvailability       },
-  { path: 'virtual-call',           loadComponent: dermVirtualCall        },
+  { path: '', redirectTo: 'agenda', pathMatch: 'full' },
+  { path: 'agenda', loadComponent: dermAgenda },
+  { path: 'past-consultations', loadComponent: dermPastConsultations },
+  { path: 'consultation-summary', loadComponent: dermConsultationSummary },
+  { path: 'availability', loadComponent: dermAvailability },
+  { path: 'virtual-call', loadComponent: dermVirtualCall },
+  {
+    path: 'profile',
+    loadComponent: () => import('./views/derm-profile/derm-profile').then((m) => m.DermProfile),
+  },
+  {
+    path: 'settings',
+    loadComponent: () =>
+      import('../../iam/presentation/views/profile-settings/profile-settings').then(
+        (m) => m.ProfileSettings,
+      ),
+  },
 ];

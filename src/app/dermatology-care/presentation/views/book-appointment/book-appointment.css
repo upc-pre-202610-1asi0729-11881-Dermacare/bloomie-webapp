@@ -47,7 +47,7 @@
   align-items: flex-start;
 }
 
-/* Profile section */
+/* ── Profile section ── */
 .book-appointment__profile-section {
   width: 380px;
   flex-shrink: 0;
@@ -77,10 +77,7 @@
   flex-shrink: 0;
 }
 
-.book-appointment__profile-avatar mat-icon {
-  font-size: 40px;
-  color: #a26769;
-}
+.book-appointment__profile-avatar mat-icon { font-size: 40px; color: #a26769; }
 
 .book-appointment__profile-specialty {
   font-family: 'Montserrat', sans-serif;
@@ -157,7 +154,7 @@
   margin: 0;
 }
 
-/* Schedule card */
+/* ── Schedule card ── */
 .book-appointment__schedule-card {
   flex: 1;
   background: #ffffff;
@@ -195,10 +192,13 @@
   display: flex;
   gap: 12px;
   margin-bottom: 24px;
+  overflow-x: auto;
+  padding-bottom: 4px;
 }
 
 .book-appointment__day-btn {
   flex: 1;
+  min-width: 48px;
   padding: 12px 4px;
   border-radius: 12px;
   border: none;
@@ -252,12 +252,7 @@
 }
 
 .book-appointment__time-btn--selected { background: #1daeef; color: #303030; }
-
-.book-appointment__no-slots {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  color: #999;
-}
+.book-appointment__no-slots { font-family: 'Montserrat', sans-serif; font-size: 14px; color: #999; }
 
 .book-appointment__continue-btn {
   width: 100%;
@@ -275,3 +270,34 @@
 
 .book-appointment__continue-btn:hover:not(:disabled) { background: #6697a0; }
 .book-appointment__continue-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── RESPONSIVE: Mobile ── */
+@media (max-width: 1023px) {
+  .book-appointment { padding: 1rem 1rem 1.5rem; }
+  .book-appointment__title { font-size: 22px; }
+
+  /* Stack profile + schedule vertically */
+  .book-appointment__content { flex-direction: column; gap: 16px; }
+
+  .book-appointment__profile-section { width: 100%; }
+
+  .book-appointment__profile-card { padding: 18px; gap: 14px; }
+  .book-appointment__profile-avatar { width: 60px; height: 60px; }
+  .book-appointment__profile-avatar mat-icon { font-size: 30px; }
+  .book-appointment__profile-specialty { font-size: 15px; }
+  .book-appointment__profile-fee { font-size: 13px; }
+
+  .book-appointment__stat-value { font-size: 16px; }
+
+  .book-appointment__schedule-card { padding: 18px; }
+  .book-appointment__schedule-title { font-size: 17px; margin-bottom: 14px; }
+
+  .book-appointment__days { gap: 8px; }
+  .book-appointment__day-btn { padding: 8px 2px; border-radius: 10px; }
+  .book-appointment__day-number { font-size: 14px; }
+  .book-appointment__day-name { font-size: 11px; }
+
+  .book-appointment__time-btn { padding: 10px 14px; font-size: 13px; }
+
+  .book-appointment__continue-btn { font-size: 14px; padding: 14px; }
+}
