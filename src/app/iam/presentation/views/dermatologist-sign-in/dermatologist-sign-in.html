@@ -8,7 +8,7 @@
   </div>
 
   <div class="derm-sign-in__form-wrapper">
-    <div class="derm-sign-in__form" [formGroup]="form">
+    <form class="derm-sign-in__form" [formGroup]="form" (ngSubmit)="onSubmit()">
 
       <div class="derm-sign-in__form-header">
         <h2 class="derm-sign-in__form-title">{{ 'iam.dermSignIn.formTitle' | translate }}</h2>
@@ -54,7 +54,11 @@
             (click)="togglePasswordVisibility()"
             [attr.aria-label]="'iam.dermSignIn.togglePassword' | translate"
           >
-            <mat-icon>{{ showPassword() ? 'visibility_off' : 'visibility' }}</mat-icon>
+            @if (showPassword()) {
+              <mat-icon>visibility_off</mat-icon>
+            } @else {
+              <mat-icon>visibility</mat-icon>
+            }
           </button>
         </div>
         @if (submitted() && form.get('password')?.hasError('required')) {
@@ -71,13 +75,13 @@
         </div>
       }
 
-      <button type="button" class="derm-sign-in__submit" [disabled]="iamStore.loading()" (click)="onSubmit()">
+      <button type="submit" class="derm-sign-in__submit" [disabled]="iamStore.loading()">
         @if (iamStore.loading()) {
           {{ 'iam.dermSignIn.loadingButton' | translate }}
         } @else {
           {{ 'iam.dermSignIn.submitButton' | translate }}
         }
       </button>
-    </div>
+    </form>
   </div>
 </div>
