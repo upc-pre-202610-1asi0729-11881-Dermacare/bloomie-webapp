@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {MatIconModule} from '@angular/material/icon';
 import {TranslatePipe} from '@ngx-translate/core';
 import {DermatologyCareStore} from '../../../application/dermatology-care.store';
+import { Appointment, AppointmentStatus } from '../../../domain/model/appointment.entity';
 
 /** Represents a selectable day in the booking calendar. */
 interface CalendarDay {
@@ -87,6 +88,32 @@ export class BookAppointment {
 
   /** Navigates to the payment method screen. */
   confirmBooking(): void {
+    const dermatologist = this.store.selectedDermatologist();
+    if (!dermatologist || !this.selectedTime()) return;
+
+    const availability = this.store.availabilities()[this.selectedDay()];
+    const [startTime]  = this.selectedTime().split(' - ');
+
+    const dayNames = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const today    = new Date();
+    const targetDay = dayNames.indexOf(availability.dayOfWeek);
+    const daysAhead = (targetDay - today.getDay() + 7) % 7 || 7;
+    const date      = new Date(today);
+    date.setDate(today.getDate() + daysAhead);
+    const [hours, minutes] = startTime.split(':').map(Number);
+    date.setHours(hours, minutes, 0, 0);
+
+    const newAppointment = new Appointment({
+      id:                 0,
+      patientId:          1,
+      dermatologistId:    dermatologist.id,
+      paymentId:          0,
+      scheduledAt:        date.toISOString(),
+      status:             AppointmentStatus.Scheduled,
+      cancellationReason: '',
+    });
+
+    this.store.addAppointment(newAppointment);
     this.router.navigate(['/dermatology/payment-method']);
   }
 
